@@ -1,1 +1,3 @@
-# portfolio
+Personal Portfolio
+
+Seth Adamson
