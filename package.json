@@ -16,7 +16,6 @@
   "bugs": {
     "url": "https://github.com/SethAdamson/portfolio/issues"
   },
-  "homepage": "https://github.com/SethAdamson/portfolio#readme",
   "dependencies": {
     "express": "^4.16.3"
   }
