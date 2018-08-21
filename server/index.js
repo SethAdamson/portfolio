@@ -36,8 +36,6 @@ app.use(session({
     saveUninitialized: true
 }));
 
-app.use(checkUserSession);
-
 //--------------Endpoints-------------//
 
 app.get('/', function(req, res) {
@@ -47,7 +45,7 @@ app.get('/', function(req, res) {
 //--------------NodeMailer-------------//
 
 app.post('/send/email', function(req, res, next){
-    let {user, message, emailSubject} = req.body;
+    let {name, email, message} = req.body;
     const transporter = nodemailer.createTransport(smtpTransport({
       service: 'gmail',
       host: 'smtp.gmail.com',
@@ -57,11 +55,11 @@ app.post('/send/email', function(req, res, next){
       }
     }));
     const mailOptions = {
-      from: `${user.email}`,
+      from: `${email}`,
       to: APP_ADDRESS,
-      subject: `${emailSubject}`,
+      subject: `${name} reached out at SethCAdamson.com`,
       text: `${message}`,
-      replyTo: `${user.email}`
+      replyTo: `${email}`
     }
     transporter.sendMail(mailOptions, function(err, res) {
       if (err) {

@@ -268,17 +268,17 @@
 								<form action="#" method="post">
 									<div class="fields">
 										<div class="field half">
-											<input name="name" id="name" placeholder="Name" type="text" style='background: rgba(255, 255, 255, 0.8)'/>
+											<input name="name" id="name" placeholder="Name" type="text" style='background: rgba(255, 255, 255, 0.8); color: black'/>
 										</div>
 										<div class="field half">
-											<input name="email" id="email" placeholder="Email" type="email" style='background: rgba(255, 255, 255, 0.8)'/>
+											<input name="email" id="email" placeholder="Email" type="email" style='background: rgba(255, 255, 255, 0.8); color: black'/>
 										</div>
 										<div class="field">
-											<textarea name="message" id="message" rows="6" placeholder="Message" style='background: rgba(255, 255, 255, 0.8)'></textarea>
+											<textarea name="message" id="message" rows="6" placeholder="Message" style='background: rgba(255, 255, 255, 0.8); color: black'></textarea>
 										</div>
 									</div>
 									<ul class="actions special">
-										<li><button class="button small alt" type="submit" onclick=sendEmail()>Send Message</button></li>
+										<li><button class="button small alt">Send Message</button></li>
 									</ul>
 								</form>
 							</div>
@@ -320,7 +320,7 @@
 					const email = document.getElementById('email');
 					const message = document.getElementById('message');
 
-					alert(name, email, message);
+					axios.post('/send/email', {name, email, message});
 				}
 			</script>
 
