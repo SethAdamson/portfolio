@@ -278,7 +278,7 @@
 										</div>
 									</div>
 									<ul class="actions special">
-										<li><button class="button small alt" type="submit">Send Message</button></li>
+										<li><button class="button small alt" type="submit" onclick=sendEmail()>Send Message</button></li>
 									</ul>
 								</form>
 							</div>
@@ -313,6 +313,16 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				function sendEmail (){
+					const axios = require('axios');
+					const name = document.getElementById('name');
+					const email = document.getElementById('email');
+					const message = document.getElementById('message');
+
+					alert(name, email, message);
+				}
+			</script>
 
 	</body>
 </html>
